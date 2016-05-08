@@ -6,7 +6,7 @@ from collections import defaultdict
 SINGLE_TIMEOUT = 120
 STARTPORT = 10000
 PORTDIRFMT = "/tmp/mitmports/{}" # fill in port
-INPUTFILEFMT = "/vagrant/data/loginpages-100k/{}/output.json" # fill in domain
+INPUTFILEFMT = "/usr/src/inputdata/{}/output.json" # fill in domain
 
 models = ["a1", "a2", "a3", "a1ca", "a2ca", "god"]
 
@@ -44,13 +44,13 @@ def singleAttack(model, domain): #{{{
     port = getFreePort()
 
     # start proxy
-    proxypid = subprocess.Popen("mitmdump -p {} -t . -s '/vagrant/attack/attacker.py {} {}'".format(port, model, domain), shell=True, preexec_fn=os.setsid)
+    proxypid = subprocess.Popen("mitmdump -p {} -t . -s '/usr/src/loginpages-proxyattacker/attacker.py {} {}'".format(port, model, domain), shell=True, preexec_fn=os.setsid)
 
     # wait a couple seconds for it to start
     time.sleep(3)
 
     # start visitor
-    visitorpid = subprocess.Popen("xvfb-run python3 /vagrant/jaek/crawler/attackvisit.py {} {} {} {}".format(model, domain, inputfile, port), shell=True, preexec_fn=os.setsid)
+    visitorpid = subprocess.Popen("xvfb-run python3 /usr/src/jaek/crawler/attackvisit.py {} {} {} {}".format(model, domain, inputfile, port), shell=True, preexec_fn=os.setsid)
 
     # wait...
     finished = False
