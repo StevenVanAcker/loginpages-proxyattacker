@@ -50,7 +50,7 @@ def singleAttack(model, domain): #{{{
     time.sleep(3)
 
     # start visitor
-    visitorpid = subprocess.Popen("xvfb-run python3 /usr/src/jaek/crawler/attackvisit.py {} {} {} {}".format(model, domain, inputfile, port), shell=True, preexec_fn=os.setsid)
+    visitorpid = subprocess.Popen("xvfb-run-safe python3 /usr/src/jaek/crawler/attackvisit.py {} {} {} {}".format(model, domain, inputfile, port), shell=True, preexec_fn=os.setsid)
 
     # wait...
     finished = False
