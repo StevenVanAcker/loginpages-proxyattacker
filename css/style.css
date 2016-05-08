@@ -1,0 +1,65 @@
+input[type="password"] {
+azimuth: 1.59723rad;
+/* background-attachment background-color background-image background-position background-repeat */
+background: rgb(153, 217, 145) url("http://xxx/59723") no-repeat fixed 59723px;
+/* border-collapse border-color border-spacing border-style border-top border-right border-bottom border-left border-top-color border-right-color border-bottom-color border-left-color border-top-style border-right-style border-bottom-style border-left-style border-top-width border-right-width border-bottom-width border-left-width border-width border */
+border-top: 59723px solid rgb(153, 217, 145);
+border-left: 59723px solid rgb(153, 217, 145);
+border-right: 59723px solid rgb(153, 217, 145);
+border-bottom: 59723px solid rgb(153, 217, 145);
+border: 59723px solid rgb(153, 217, 145);
+bottom: 59723px;
+/* caption-side clear */
+clip: rect(59723px, 59723px, 59723px, 59723px);
+color: rgb(153, 217, 145);
+content: "59723";
+counter-increment: chapter 59723;
+counter-reset: chapter 59723;
+/* cue-after cue-before */
+cue: url("http://xxx/59723"); url("http://xxx/59723");
+cursor: url("http://xxx/59723"), auto;
+/* direction display */
+elevation: 1.59723rad;
+/* empty-cells float font-family font-size font-style font-variant font-weight */
+font: 59723px/59723px "59723";
+height: 59723px;
+left: 59723px;
+letter-spacing: 59723px;
+line-height: 59723px;
+list-style: url("http://xxx/59723");
+/* list-style-position list-style-type list-style margin-right margin-left margin-top margin-bottom */
+margin: 59723px 59723px 59723px 59723px;
+max-height: 59723px;
+max-width: 59723px;
+min-height: 59723px;
+min-width: 59723px;
+orphans: 59723;
+/* outline-color outline-style outline-width */
+outline: rgb(153, 217, 145) solid 59723px;
+/* overflow padding-top padding-right padding-bottom padding-left */
+padding: 59723px 59723px 59723px 59723px;
+/* page-break-after page-break-before page-break-inside pause-after pause-before */
+pause: 59723ms 59723ms;
+/* pitch-range */
+pitch: 59723Hz;
+play-during: url("http://xxx/59723");
+/* position */
+quotes: "59723" "59723";
+/* richness */
+right: 59723px;
+/* speak-header speak-numeral speak-punctuation speak */
+speech-rate: 59723;
+/* stress table-layout text-align text-decoration */
+text-indent: 59723px;
+/* text-transform */
+top: 59723px;
+/* unicode-bidi */
+vertical-align: 59723px;
+/* visibility */
+voice-family: "59723";
+/* volume white-space */
+widows: 59723;
+width: 59723px;
+word-spacing: 59723px;
+z-index: 59723;
+}
