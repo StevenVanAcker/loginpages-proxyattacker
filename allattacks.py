@@ -12,7 +12,7 @@ models = ["a1", "a2", "a3", "a1ca", "a2ca", "god"]
 
 def getFreePort(): #{{{
     while True:
-        for p in range(STARTPORT, STARTPORT + 5000):
+        for p in range(STARTPORT, STARTPORT + 20000):
             try:
                 os.makedirs(PORTDIRFMT.format(p))
                 logging.debug("Running on port {}".format(p))
