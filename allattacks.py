@@ -141,13 +141,16 @@ def combineSingleModelData(am): #{{{
             rec["matchedResources"] = matchedresources
             rec["matchedAlerts"] = matchedalerts
         pdata["pwfields"] = vdata["pwfields"]
+        pdata["origurl"] = vdata["origurl"]
+        pdata["url"] = vdata["url"]
         output = pdata
     except:
         pass
     return output
 #}}}
-def combineAllModelData(): #{{{
+def combineAllModelData(domain, rank): #{{{
     models = ["a1", "a2", "a3", "a1ca", "a2ca", "god"]
+    out = {"domain": domain, "rank": rank}
     modelsData = {}
     for m in models:
         cd = combineSingleModelData(m)
@@ -206,11 +209,18 @@ def combineAllModelData(): #{{{
             except:
                 pass
 
-    return modelsData
+    out["attackermodels"] = modelsData
+    return out
 #}}}
 
 if __name__ == "__main__":
-    domain = sys.argv[1]
+    if len(sys.argv) > 1:
+	domain = sys.argv[1]
+	rank = 0
+    else:
+	data = json.load(open("input.json"))
+	domain = data["domain"]
+	rank = data["rank"]
     for m in models:
         singleAttack(m, domain)
         success = True
@@ -221,4 +231,4 @@ if __name__ == "__main__":
         if not success:
             singleAttack(m, domain)
 
-    json.dump(combineAllModelData(), open("output.json", "w"))
+    json.dump(combineAllModelData(domain, rank), open("output.json", "w"))
