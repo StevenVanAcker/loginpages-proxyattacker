@@ -159,6 +159,9 @@ def combineAllModelData(domain, rank): #{{{
         if cd == {}:
             continue
 
+        modelsData["url"] = cd["url"]
+        modelsData["origurl"] = cd["origurl"]
+
         # total amount of resources seen, this included those that fail outside the attacker model (e.g. not in the domain)
         modelsData[m]["requestsSeen"] = len(cd["urls"])
         # total amount of injected resources that are also sensitive
@@ -215,12 +218,12 @@ def combineAllModelData(domain, rank): #{{{
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-	domain = sys.argv[1]
-	rank = 0
+        domain = sys.argv[1]
+        rank = 0
     else:
-	data = json.load(open("input.json"))
-	domain = data["domain"]
-	rank = data["rank"]
+        data = json.load(open("input.json"))
+        domain = data["domain"]
+        rank = data["rank"]
     for m in models:
         singleAttack(m, domain)
         success = True
