@@ -159,8 +159,8 @@ def combineAllModelData(domain, rank): #{{{
         if cd == {}:
             continue
 
-        modelsData["url"] = cd["url"]
-        modelsData["origurl"] = cd["origurl"]
+        out["url"] = cd["url"]
+        out["origurl"] = cd["origurl"]
 
         # total amount of resources seen, this included those that fail outside the attacker model (e.g. not in the domain)
         modelsData[m]["requestsSeen"] = len(cd["urls"])
