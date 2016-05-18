@@ -68,7 +68,10 @@ def singleAttack(model, domain): #{{{
 
     # dump record
     proxies = {'http': 'http://localhost:{}'.format(port)}
-    urllib.urlopen("http://dumprecord/", proxies=proxies)
+    try:
+        urllib.urlopen("http://dumprecord/", proxies=proxies)
+    except:
+        pass
 
     # kill proxy
     try:
